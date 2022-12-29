@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .classname{
+            background-color: red;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1 id="name" class="name">heading 1</h1> -->
+    <!-- <h1 name="hello" class="name">heading 2</h1>
+    <h1 name="hello" class="name">heading 3</h1>
+    <h1 name="hello" class="name">heading 4</h1>
+    <h2>this is heading 2</h2>
+    <h2>this is heading 2</h2>
+    <h2>this is heading 2</h2>
+    <h2>this is heading 2</h2>
+    <h2>this is heading 2</h2> -->
+    
+    <input id="name" type="text">
+    <h1 id="hello">ghfgyfghfgh</h1>
+    <button onclick="hello()" id="clickme">add</button>
+    <button onclick="remove()" >remove</button>
+
+
+    <script>
+            function hello() {
+                // var name = document.getElementById("name").value
+                // var greeting = "hello " + name + " how are you?"
+                // document.getElementsByTagName("h1")[0].innerHTML = greeting
+                var temp = document.getElementById("hello")
+                temp.classList.add("classname")
+            }
+
+            function remove() {
+                var temp = document.getElementById("hello")
+                temp.classList.remove("classname")
+            }
+        // var temp = document.getElementById("name")
+        // console.log(temp);
+        // var temp2 = document.getElementsByClassName("name")
+        // console.log(temp2);
+        // console.log(temp2[0]);
+        // console.log(temp2[1]);
+        // console.log(temp2[2]);
+        // console.log(temp2[3]);
+        // console.log(temp2[4]);
+        // var temp3 = document.getElementsByName("hello")
+        // console.log(temp3)
+        // console.log(temp3[0])
+        // console.log(temp3[1])
+        // console.log(temp3[2])
+        // var temp4 = document.getElementsByTagName("h1")
+        // console.log(temp4);
+        // console.log(temp4[0]);
+        // console.log(temp4[1]);
+        // console.log(temp4[2]);
+        // var temp5 = document.querySelector("#name")
+        // console.log(temp5);
+        // var temp6 = document.querySelector(".name")
+        // console.log(temp6);
+        // var temp7 = document.querySelectorAll(".name")
+        // console.log(temp7);
+        // console.log(temp7[0]);
+        // console.log(temp7[1]);
+        // console.log(temp7[2]);
+
+       
+
+
+        // function hello() {
+        //     var temp = document.getElementsByTagName("h2")
+        //     var spreadedArray = [...temp]
+        //     console.log(temp);
+        //     // temp[0].setAttribute("style", "color: red")
+        //     // temp[0].setAttribute("class", "geekster")
+        //     spreadedArray.map((ele)=>{
+        //         ele.setAttribute("style", "color: red")
+        //     })
+        // }
+
+    </script>
+
+
+
+
+</body>
+</html>
+
+

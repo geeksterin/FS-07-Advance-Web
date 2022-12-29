@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        button{
+            border: 2px solid green;
+            padding: .5rem 1rem;
+
+        }
+
+        .mainDiv{
+            border: 2px solid red;
+            width: 100vw;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            overflow-y: scroll;
+        }
+
+        .card{
+            border: 2px solid red;
+            width: 300px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <input id="name" type="text">
+        <button onclick="hello()">click Me</button>
+    </div>
+    
+    <script>
+        var mainDiv = document.createElement("div")
+        mainDiv.classList.add("mainDiv")
+
+        function hello() {
+            var name = document.getElementById("name").value
+            console.log(name);
+            console.log("function ran");
+            var div = document.createElement("div")
+            div.classList.add("card")
+            var h1 = document.createElement("p")
+            var h1Text = document.createTextNode(`hello my name is ${name}`)
+            h1.appendChild(h1Text)
+            div.appendChild(h1)
+
+            mainDiv.appendChild(div)
+            document.body.appendChild(mainDiv)
+            document.getElementById("name").value = ""
+        }
+    </script>
+
+</body>
+</html>
