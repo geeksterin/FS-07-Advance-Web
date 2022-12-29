@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculator.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="main">
+            <div class="parent">
+                <div class="top">
+                    <div id="topLeft" class="topLeft"></div>
+                    <div id="clear" onclick="clearDisp(event)" class="topRight">C</div>
+                </div>
+                <div class="bottom">
+                    <div onclick="getValue(event)" id="seven" class="seven numbers">7</div>
+                    <div onclick="getValue(event)" id="eight" class="eight numbers">8</div>
+                    <div onclick="getValue(event)" id="nine" class="nine numbers">9</div>
+                    <div onclick="getValue(event)" id="divide" class="divide operators">/</div>
+                    <div onclick="getValue(event)" id="four" class="four numbers">4</div>
+                    <div onclick="getValue(event)" id="five" class="five numbers">5</div>
+                    <div onclick="getValue(event)" id="six" class="six numbers">6</div>
+                    <div onclick="getValue(event)" id="minus" class="minus operators">-</div>
+                    <div onclick="getValue(event)" id="one" class="one numbers">1</div>
+                    <div onclick="getValue(event)" id="two" class="two numbers">2</div>
+                    <div onclick="getValue(event)" id="three" class="three numbers">3</div>
+                    <div onclick="getValue(event)" id="plus" class="plus operators">+</div>
+                    <div onclick="getValue(event)" id="dot" class="dot numbers">.</div>
+                    <div onclick="getValue(event)" id="zero" class="zero numbers">0</div>
+                    <div onclick="value(event)" id="equals" class="equal">=</div>
+                    <div onclick="getValue(event)" id="multiply" class="multiply operators">*</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var currentValue
+        function getValue(event) {
+            currentValue = event.target.innerText
+            const display = document.getElementById("topLeft")
+            display.innerText += currentValue
+            currentValue = display.innerText
+            console.log(currentValue);
+        }
+        
+        function value() {
+            const display = document.getElementById("topLeft")
+            display.innerText =""
+            display.innerText = eval(currentValue)
+        }
+
+        function clearDisp(event) {
+            const display = document.getElementById("topLeft")
+            display.innerText =""
+        }
+
+    </script>
+</body>
+
+</html>

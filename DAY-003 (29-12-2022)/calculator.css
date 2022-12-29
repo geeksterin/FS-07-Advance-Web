@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.mainContainer {
+    background-color: #26547b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.main {
+    width: 70%;
+    height: 400px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.parent {
+    width: 90%;
+    height: 100%;
+    background-color: #1b1a2a;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 4px solid white;
+}
+
+.top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.topLeft {
+    padding-right: 2rem;
+    height: 50px;
+    width: 83%;
+    border-radius: 6px;
+    background-color: white;
+    color: black;
+    font-weight: 900;
+    text-align: end;
+    box-shadow: inset 2px 2px 2px 1px #490311;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.topRight {
+    padding: .9rem 1.5rem;
+    background-color: #fc0067;
+    box-shadow: 0 5px 3px #112d45;
+    border-radius: 6px;
+    color: white;
+}
+
+.bottom {
+    width: 100%;
+    display: flex;
+    height: 83%;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.numbers,
+.equal {
+    width: 26%;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: white;
+    font-weight: 900;
+    margin-right: .5rem;
+}
+
+.numbers {
+    background-color: #672590;
+    box-shadow: 0px 3px 2px #112d45;
+}
+
+.operators {
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    background-color: #672590;
+    box-shadow: 0 5px 3px #112d45;
+    color: white;
+    font-weight: 900;
+}
+
+.equal {
+    background-color: #fc0067;
+    box-shadow: 0 2px 2px #112d45;
+}
+
+@media only screen and (min-width: 768px) {
+    .main {
+        width: 40%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .main {
+        width: 100%;
+    }
+}
