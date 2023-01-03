@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <label for="name">Name</label>
+    <input type="text" id="name">
+
+    <label for="phno">ph. No.</label>
+    <input type="number" id="phno">
+
+    <label for="email">email</label>
+    <input type="email" id="email">
+
+    <label for="country">country</label>
+    <input type="text" name="country" id="country">
+
+    <button onclick="submitData()" type="submit">submit</button>
+
+    <!-- 
+        syntax 
+            {
+                key1: "value"
+                key2: "value"
+                key3: "value"
+                key4: "value"
+                key5: "value"
+            }
+     -->
+    <script>
+
+        var loginData = {
+            name: "",
+            phno: "",
+            email: "",
+            country: "",
+        }
+        function submitData() {
+            const name = document.getElementById("name").value
+            const phno = document.getElementById("phno").value
+            const email = document.getElementById("email").value
+            const country = document.getElementById("country").value
+
+            loginData.name = name
+            loginData.phno = phno
+            loginData.email = email
+            loginData.country = country
+            console.log(name, phno, email, country);
+            console.log(loginData);
+            
+            alert(JSON.stringify(loginData))
+
+        }
+
+
+        // const hello =
+        // {
+        //     users: [
+        //         {
+        //             "name": "a",
+        //             "age": "90",
+        //             "phno": "9384072397",
+        //             "mail": "gdjg@hdgf.coxm",
+        //             "myFuntion": () => {
+        //                 return "hello"
+        //             }
+        //         },
+        //         {
+        //             "name": "a",
+        //             "age": "90",
+        //             "phno": "9384072397",
+        //             "mail": "gdjg@hdgf.coxm",
+        //             "myFuntion": () => {
+        //                 return "hello"
+        //             }
+        //         },
+        //         {
+        //             "name": "a",
+        //             "age": "90",
+        //             "phno": "9384072397",
+        //             "mail": "gdjg@hdgf.coxm",
+        //             "myFuntion": () => {
+        //                 return "hello"
+        //             }
+        //         }
+
+        //     ]
+        // }
+
+        // const hello2 = '{"name":"abc", "city":"ggn"}'
+        // const hello3 = {name:"abc", "city":"ggn"}
+        // const finalObj = JSON.parse(hello2)
+        // console.log(hello);
+
+        // console.log(hello2);
+        // console.log(finalObj);
+        // console.log(JSON.stringify(hello3));
+
+    </script>
+</body>
+
+</html>
