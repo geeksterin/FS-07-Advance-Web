@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+        <h1 id="head1">Press any Key board Key</h1>
+        <h2 id="head2"></h2>
+        
+    </div>
+    <script>
+      
+      // Add event listener on keypress
+      document.addEventListener("keypress",(event)=>{
+        var name=event.key;
+        var charCode=event.charCode;
+        let head1=document.getElementById("head1");
+        head1.innerHTML=`You have Pressed ${name}`;
+        head2.innerHTML=charCode
+      })
+      
+    </script>
+  </body>
+</html>
