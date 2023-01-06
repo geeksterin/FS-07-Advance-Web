@@ -1,0 +1,13 @@
+table {
+    width: 100%;
+    border: 2px solid red;
+}
+
+ .tablerow{
+    border: 2px solid black;
+}
+
+td{
+    border: 2px solid black;
+
+}
