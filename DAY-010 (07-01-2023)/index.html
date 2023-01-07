@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input onkeyup="inputValueChange()" type="text" id="name" placeholder="enter your name">
+    <input onkeyup="inputValueChange()" type="text" id="email" placeholder="enter your email">
+    <input onkeyup="inputValueChange()" type="text" id="gender" placeholder="enter your gender">
+    <input onkeyup="inputValueChange()" type="text" id="phonenumber" placeholder="enter your phone number">
+    <button onclick="submitData()" disabled="true" id="submitbutton">submit</button>
+    <script>
+        const input = document.getElementById("name")
+        const email = document.getElementById("email")
+        const gender = document.getElementById("gender")
+        const phno = document.getElementById("phonenumber")
+
+        const button = document.getElementById("submitbutton")
+
+        function inputValueChange(){
+            const typeOfInput = Number(input.value)
+            console.log(gender.value.toLowerCase() != "male");
+            if((input.value === "" || input.value.length < 3 || /^[a-zA-Z]*$/.test(input.value) == false )|| 
+            (email.value === "" || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3}[a-zA-Z\s])+$/.test(email.value)==false)||
+            ( gender.value === "" || (gender.value.toLowerCase() != "male" && gender.value.toLowerCase() != "female"))||
+             phno.value==="" || /^\w{9}\d+$/.test(phno.value)==false || phno.value.length == 10 ){
+                button.setAttribute("disabled", "true")
+            }
+            else{
+                    button.removeAttribute("disabled", "true")
+                }
+                
+            
+
+        }
+
+        function submitData() {
+            
+            console.log("button clicked");
+        }
+
+    </script>
+</body>
+</html>
