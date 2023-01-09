@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            border: 2px solid red;
+            outline: 2px solid red;
+        }
+
+        #helperText1,
+        #helperText2,
+        #helperText3,
+        #helperText4,
+        #helperText5 {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input onkeyup="inputValueChange()" type="text" id="name" placeholder="enter your name">
+
+    <p id="helperText1"></p>
+
+    <input onkeyup="inputValueChange()" type="text" id="email" placeholder="enter your email">
+
+    <p id="helperText2"></p>
+
+    <input onkeyup="inputValueChange()" type="text" id="gender" placeholder="enter your gender">
+
+    <p id="helperText3"></p>
+
+    <input onkeyup="inputValueChange()" maxlength="10" type="text" id="phonenumber"
+        placeholder="enter your phone number">
+
+    <p id="helperText4"></p>
+
+    <p id="helperText5"></p>
+    <button onclick="submitData()" id="submitbutton">submit</button>
+    <script>
+        var input = document.getElementById("name")
+        var email = document.getElementById("email")
+        var gender = document.getElementById("gender")
+        var phno = document.getElementById("phonenumber")
+
+        const button = document.getElementById("submitbutton")
+        const error = {
+            name: true,
+            email: true,
+            gender: true,
+            phoneNumber: true
+        }
+
+
+        function inputValueChange() {
+            const typeOfInput = Number(input.value)
+            console.log(gender.value.toLowerCase() != "male");
+            const helperText = document.getElementById("helperText1")
+            const helperText2 = document.getElementById("helperText2")
+            const helperText3 = document.getElementById("helperText3")
+            const helperText4 = document.getElementById("helperText4")
+            const helperText5 = document.getElementById("helperText5")
+
+
+
+            if (input.value === "") {
+                error.name = true
+                input.classList.add("error")
+                console.log("name");
+                helperText.innerText = "value is empty"
+            }
+            else {
+                error.name = false
+                input.classList.remove("error")
+                helperText.innerText = ""
+
+                if (input.value.length < 3) {
+                    error.name = true
+                    input.classList.add("error")
+                    helperText.innerText = "value should be greater than 3"
+                }
+                else {
+                    error.name = false
+                    input.classList.remove("error")
+                    helperText.innerText = ""
+
+                    if (/^[a-zA-Z]*$/.test(input.value) == false) {
+                        error.name = true
+                        input.classList.add("error")
+                        helperText.innerText = "please enter a valid name"
+
+                    }
+                    else {
+                        error.name = false
+                        input.classList.remove("error")
+                        helperText.innerText = ""
+                    }
+                }
+
+            }
+
+
+
+
+            if ((email.value === "" || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3}[a-zA-Z\s])+$/.test(email.value) == false)) {
+                helperText2.innerText = "please enter a valid email"
+                error.email = true
+                email.classList.add("error")
+
+            } else {
+                helperText2.innerText = ""
+                error.email = false
+                email.classList.remove("error")
+            }
+
+            if ((gender.value === "" || (gender.value.toLowerCase() != "male" && gender.value.toLowerCase() != "female"))) {
+                helperText3.innerText = "gender should be male or female"
+                error.gender = true
+                gender.classList.add("error")
+            } else {
+                helperText3.innerText = ""
+                error.gender = false
+                gender.classList.remove("error")
+            }
+
+
+            if (phno.value === "") {
+                error.phoneNumber = true
+                phno.classList.add("error")
+                helperText4.innerText = "phone number can't be empty"
+            } else {
+                error.phoneNumber = false
+                phno.classList.remove("error")
+                helperText4.innerText = ""
+                if (phno.value.length == 9) {
+                    error.phoneNumber = true
+                    phno.classList.add("error")
+                    helperText4.innerText = "phone number should be of 10 digits"
+                } else {
+                    error.phoneNumber = false
+                    phno.classList.remove("error")
+                    helperText4.innerText = ""
+                    if (/^\w{9,9}\d+$/.test(phno.value) == false) {
+                        error.phoneNumber = true
+                        phno.classList.add("error")
+                        helperText4.innerText = "please enter a valid phone number"
+                    } else {
+                        error.phoneNumber = false
+                        phno.classList.add("error")
+                        helperText4.innerText = ""
+
+                    }
+                }
+            }
+
+
+            if ((phno.value === "" || /^\w{9,9}\d+$/.test(phno.value) == false || phno.value.length == 9)) {
+                error.phoneNumber = true
+                phno.classList.add("error")
+            } else {
+                error.phoneNumber = false
+                phno.classList.remove("error")
+            }
+        }
+
+        function submitData() {
+
+            const DataToSend = {
+                name: input.value,
+                email: email.value,
+                gender: gender.value,
+                phoneNumber: phno.value
+            }
+            if (error.name === true || error.email === true || error.gender === true || error.phoneNumber === true) {
+                helperText5.innerText = "form values can't be empty"
+                console.log("errors are there");
+                input.classList.add("error")
+                email.classList.add("error")
+                gender.classList.add("error")
+                phno.classList.add("error")
+
+            } else {
+                console.log("button clicked");
+                console.log("data", DataToSend);
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
