@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" type="text">
+    <button id="button" onclick="hello()">click me</button>
+    <!-- <button id="button" onclick="hello2()">getItem</button> -->
+    <div id="div"></div>
+    <script>
+        // const button = document.getElementById("button")
+        // var input = document.getElementById("input")
+        // console.log(input);
+        // function hello(){
+        //     var name = input.value
+        //     const div = document.getElementById("div")
+        //     console.log(name);
+        //     div.innerHTML = `hello ${name}`
+        // }
+ 
+// *****************************************************************
+
+        // var hello = {
+        //     name:"rishabh",
+        //     age: 21,
+        //     mobNo: 848237472365423,
+        //     obj:{
+        //         hello1:"hello",
+        //         bye:"bye"
+        //     },
+        //     arr : [
+        //         {
+        //             abc:"abc",
+        //             def:"def"
+        //         },
+        //         {
+        //             abc:"abc",
+        //             def:"def"
+        //         },
+        //     ]
+        // }
+
+        // const {age, name, mobNo, obj, arr} = hello
+        // const {hello1, bye} = obj
+        // const firstElem = arr[0]
+        // const secondElem = arr[1]
+        // const {abc, def} = firstElem
+        // const {abc, def} = secondElem
+        // console.log(name);
+        // console.log(age);
+        // console.log(hello1);
+        // console.log(bye);
+        // console.log(arr);
+        // console.log(firstElem);
+        // console.log(secondElem);
+        // console.log(abc);
+        // console.log(def);
+// *****************************************************************
+
+        // var hello = [1,2,3,4,5,6,7,8]
+        // var first = hello[0]
+        // var third = hello[2]
+        // console.log(first,third);
+// *****************************************************************
+        
+        // const hello = [1,2,3,4,5,6,7,8]
+        // const name = ["abc", "def", "ghi"]
+        // const arr = [hello, name]
+
+        // const [one, ...two] = hello
+        // console.log(one);
+        // console.log(two);
+// *****************************************************************
+
+        // const a = {hello:"hello", bye:"bye"}
+        // const b = {hello:"hello", bye:"bye"}
+        // console.log(a===b);
+        // console.log(a==b);
+
+// *****************************************************************
+
+        // function hello(){
+        //     var name = input.value
+        //    localStorage.setItem("name", name)
+        //    const div = document.getElementById("div")
+        //    div.innerHTML = `hello ${localStorage.getItem("name")}`
+        //    localStorage.clear()
+        // }
+        function hello(){
+            var name = input.value
+           sessionStorage.setItem("name", name)
+           const div = document.getElementById("div")
+           div.innerHTML = `hello ${sessionStorage.getItem("name")}`
+        //    sessionStorage.clear()
+        }
+      
+    </script>
+</body>
+</html>
