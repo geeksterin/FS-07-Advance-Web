@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const a = fetch("https://api.github.com/users")
+        // console.log(a);
+        // a.then((data)=>{
+        //     const response = data.json()
+        //     console.log(response);
+        //     response.then((data)=>{
+        //         console.log(data);
+        //     })
+        // })
+
+        // async function hello() {
+        //     const a = await fetch("https://api.github.com/users")
+        //     const res = await a.json()
+        //     res.map((ele)=>{
+        //         setInterval(()=>{
+        //             console.log(ele);
+        //         }, 500)
+        //     })
+        // }
+        // hello()
+
+        // let names = {
+        //     fname: "Dillion",
+        //     lname: "Megida"
+        // }
+        // console.log(names);
+        // // console.log(names.hasOwnProperty("mname"));
+        // // console.log(names.hasOwnProperty("fname"));
+        // let hello = {
+        //     key:"value"
+        // }
+
+        // console.log(Object.setPrototypeOf(names, hello))
+        // console.log(Object.getPrototypeOf(names))
+        // console.log(names.__proto__)
+
+
+        // // console.log(names.fname);
+
+
+        // function DogObject(name, age) {
+        //     let dog = Object.create({});
+        //     dog.name = name;
+        //     dog.age = age;
+        //     return dog;
+        // }
+        // let constructorObject = {
+        //     speak: function () {
+        //         return "I am a dog"
+        //     }
+        // }
+        // let bingo = DogObject("Bingo", 54);
+        // console.log(bingo);
+
+        // function DogObject(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+        // DogObject.prototype.speak = function () {
+        //     return "I am a dog";
+        // }
+        // let john = new DogObject("John", 45);
+        // console.log(john);
+        // console.log(DogObject);
+
+        class Animals {
+            constructor(ghi, abc, phno) {
+                this.name = ghi;
+                this.age = abc;
+                this.phno = phno
+            }
+            sing() {
+                return `${this.name} can sing ${this.phno}`;
+            }
+            dance() {
+                return `${this.name} can dance`;
+            }
+        }
+        class Cats extends Animals {
+            constructor(name, age, whiskerColor, phno) {
+                super(name, age, phno);
+                this.whiskerColor = whiskerColor;
+            }
+            whiskers() {
+                return `I have ${this.whiskerColor} whiskers`;
+            }
+        }
+
+        let clara = new Cats("Clara", 33, 3892749823472389, "indigo");
+        const sing = clara.sing()
+        const dance = clara.dance()
+        const whiskers = clara.whiskers()
+        console.log(sing, dance, whiskers);
+
+    </script>
+</body>
+
+</html>
